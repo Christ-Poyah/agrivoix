@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "AgriVoix",
+    "slug": "agrivoix",
+    "scheme": "agrivoix",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +20,27 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "AgriVoix utilise le micro pour enregistrer vos messages vocaux.",
+          "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "AgriVoix accède à vos photos pour que l'assistant analyse vos plantations.",
+          "cameraPermission": "AgriVoix utilise la caméra pour photographier vos plantations."
+        }
+      ],
+      "expo-font",
+      "expo-asset"
+    ]
   }
 }
